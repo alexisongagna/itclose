@@ -42,12 +42,13 @@ public class CentreHospitalier {
         this.email = email;
         this.boitePostale = boitePostale;
 
+        this.specialites ="";
         if (spec != null && spec.size()>1)
         {
             for (int i =0 ; i< spec.size(); i++)
                 this.specialites = specialites+' '+spec.get(i);
-
         }
+        specialites = specialites.trim();
     }
 
     public int getId() {

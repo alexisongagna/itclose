@@ -19,4 +19,5 @@ public interface ICentreHospitalierRepository extends CrudRepository<com.itclose
 
     List<CentreHospitalier> findAll();
 
+
 }

@@ -11,6 +11,5 @@ public class ItcloseApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ItcloseApplication.class, args);
 	}
-
 }
 
