@@ -13,10 +13,11 @@ public class MainController {
     public String home() {
         String html = "";
         html += "<ul>";
+        html += " <li><a href='/api/Entreprises'>Liste des entreprises</a></li>";
         html += " <li><a href='/api/CentresHospitaliers'>Liste des centres hospitaliers</a></li>";
         html += " <li><a href='/api/Hotels'>Liste des hotels</a></li>";
+        html += " <li><a href='/api/Restaurants'>Liste des restaurants</a></li>";
         html += "</ul>";
         return html;
     }
-
 }

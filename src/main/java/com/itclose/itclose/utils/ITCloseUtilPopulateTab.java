@@ -1,9 +1,13 @@
 package com.itclose.itclose.utils;
 
 import com.itclose.itclose.model.CentreHospitalier;
+import com.itclose.itclose.model.Entreprise;
 import com.itclose.itclose.model.Hotel;
+import com.itclose.itclose.model.Restaurant;
 import com.itclose.itclose.repository.ICentreHospitalierRepository;
+import com.itclose.itclose.repository.IEntrepriseRepository;
 import com.itclose.itclose.repository.IHotelRepository;
+import com.itclose.itclose.repository.IRestaurantRepository;
 import com.itclose.itclose.solr.SolrJHotelServices;
 
 import java.util.ArrayList;
@@ -129,5 +133,84 @@ public class ITCloseUtilPopulateTab {
         ) ;
 
         dao.save(hotel_3);
+    }
+
+
+    public ITCloseUtilPopulateTab(IRestaurantRepository dao)
+    {
+        dao.deleteAll();
+
+        List<String> specialites = new ArrayList<String>();
+        specialites.add(new String("Cuisine africaine"));
+        specialites.add(new String("Cuisine française"));
+        specialites.add(new String("Specialités turques"));
+
+
+        Restaurant hotel_1 = new Restaurant(
+                "La TDH - Hotel & Restaurant",
+                "France",
+                "Fontenay sous bois",
+                "Val de Fontenay",
+                "Avenue du maréchal de lattre de tassigny",
+                2017,
+                1,
+                specialites,
+                "01 45 34 21 10",
+                "contact@gmail.com",
+                "www.la-table-dhome.fr"
+        ) ;
+
+        dao.save(hotel_1);
+
+        specialites.remove(1);
+        Restaurant hotel_2 = new Restaurant(
+                "Au petit matin",
+                "France",
+                "Paris",
+                "Moulin rouge",
+                "87 avenue de Versailles",
+                2019,
+                3,
+                specialites,
+                "01 48 90 21 10",
+                "contact@aupetitmatin.com",
+                "www.ta-table-dhome.fr"
+        ) ;
+
+        dao.save(hotel_2);
+
+        specialites.remove(1);
+        Restaurant hotel_3 = new Restaurant(
+                "Chez la Mama",
+                "France",
+                "Pantin",
+                "",
+                "6 rue Hector Berlioz",
+                2011,
+                2,
+                specialites,
+                "01 45 34 21 10",
+                "contact@clamama.com",
+                "www.chez-la-mama.com"
+        ) ;
+
+        dao.save(hotel_3);
+    }
+
+    public ITCloseUtilPopulateTab(IEntrepriseRepository dao)
+    {
+        dao.deleteAll();
+
+        Entreprise ent = new Entreprise(
+                "France",
+                "Banque / Finance / Assurance",
+                "FinDb Consulting",
+                2017,
+                "SARL",
+                "Impôt sur les sociétés",
+                "www.FinDB-Cons.org"
+        ) ;
+
+        dao.save(ent);
     }
 }
