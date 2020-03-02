@@ -28,7 +28,7 @@ public class SolrJCentreHospitalierServices {
    //final static Logger logger = Logger.getLogger(classname.class);
 
 
-    public static void addCentreHospitalier(CentreHospitalier pBean) throws IOException, SolrServerException {
+    public static void addRefData(CentreHospitalier pBean) throws IOException, SolrServerException {
 
         HttpSolrClient solrClient = new SolrConfig().getSolrClient(COLLECTION_NAME);
         solrClient.addBean(pBean);
