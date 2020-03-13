@@ -13,12 +13,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.sql.Date;
+import java.util.Date;
 
 public class SolrRefDataServices {
 
 
-    private final static String COLLECTION_NAME = "centrehospitalier";
+    private final static String COLLECTION_NAME = "RefData";
     private final static String RESPONSE = "response";
     private final static String SOLR_Q_KEY = "q";
     private final static String SOLR_WT_KEY = "wt" ;
@@ -27,10 +27,10 @@ public class SolrRefDataServices {
 
     //Common fields
     private final static String IDENTIFIER          = "id";
-    private final static String CATEGORIE_REF       = "categorieReferentiel" ;
-    private final static String NOM_STRUCTURE       = "nomStructure" ;
-    private final static String NOM_RESPONSABLE     = "nomPrenomResponsable" ;
-    private final static String DATE_CREATION       = "dateCreation" ;
+    private final static String CATEGORIE_REF       = "categoriereferentiel" ;
+    private final static String NOM_STRUCTURE       = "nomstructure" ;
+    private final static String NOM_RESPONSABLE     = "nomprenomresponsable" ;
+    private final static String DATE_CREATION       = "datecreation" ;
     private final static String PAYS                = "pays" ;
     private final static String VILLE               = "ville" ;
     private final static String QUARTIER            = "quartier" ;
@@ -38,36 +38,36 @@ public class SolrRefDataServices {
     private final static String RUE                 = "rue" ;
     private final static String TELEPHONE           = "telephone" ;
     private final static String EMAIL               = "email" ;
-    private final static String SITE_WEB            = "siteWeb" ;
-    private final static String BOITE_POSTALE       = "boitePostale" ;
+    private final static String SITE_WEB            = "siteweb" ;
+    private final static String BOITE_POSTALE       = "boitepostale" ;
 
     //Fields for CentreHospitaliers
-    private final static String TYPE_CENTRE_HOSPITALIER =   "typeCentreHospitalier" ;
+    private final static String TYPE_CENTRE_HOSPITALIER =   "typecentrehospitalier" ;
     private final static String SPECIALITE_CH       = "specialites" ;
 
     //Common Fields for Restaurant and Hotel
-    private final static String NB_ETOILES          = "nbEtoile" ;
-    private final static String TYPE_PLATS          = "typesPlats" ;
+    private final static String NB_ETOILES          = "nbetoile" ;
+    private final static String TYPE_PLATS          = "typesplats" ;
 
 
     //Fields for Entreprise
-    private final static String SECTEUR_ACTIVITE    = "secteurActivite" ;
-    private final static String STATUT_JURIDIQUE    = "statutJuridique" ;
-    private final static String REGIME_FISCAL       = "regimeFiscal" ;
+    private final static String SECTEUR_ACTIVITE    = "secteuractivite" ;
+    private final static String STATUT_JURIDIQUE    = "statutjuridique" ;
+    private final static String REGIME_FISCAL       = "regimefiscal" ;
 
     //Fields for Assurance
     private final static String ASSUREUR            = "assureur" ;
     private final static String PRIME               = "prime" ;
-    private final static String VALEUR_PRIME        = "valeurPrime" ;
-    private final static String DUREE_PRIME         = "dureePrime";
+    private final static String VALEUR_PRIME        = "valeurprime" ;
+    private final static String DUREE_PRIME         = "dureeprime";
 
     //Fields for TransporteurTerrestre
-    private final static String TYPE_VEHICULE       = "typeVehicule" ;
-    private final static String AGENT_RAVITO        = "agentRavitoCarburant" ;
+    private final static String TYPE_VEHICULE       = "typevehicule" ;
+    private final static String AGENT_RAVITO        = "agentravitocarburant" ;
 
     //Fields for TransporteurAerien
-    private final static String TYPE_AVION          = "typeAvion" ;
-    private final static String NB_PILOTES          = "nbPilotes" ;
+    private final static String TYPE_AVION          = "typeavion" ;
+    private final static String NB_PILOTES          = "nbpilotes" ;
 
 
 
@@ -107,7 +107,7 @@ public class SolrRefDataServices {
 
                 RefData myData = new RefData();
 
-                myData.setId((int)aDoc.getFieldValue(IDENTIFIER)) ;
+                //myData.setId((int)aDoc.getFieldValue(IDENTIFIER)) ;
                 myData.setCategorieReferentiel(categorie) ;
                 myData.setNomStructure((String)aDoc.getFieldValue(NOM_STRUCTURE));
                 myData.setNomPrenomResponsable((String)aDoc.getFieldValue(NOM_RESPONSABLE));

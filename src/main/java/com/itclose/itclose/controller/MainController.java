@@ -17,6 +17,8 @@ public class MainController {
         html += " <li><a href='/api/CentresHospitaliers'>Liste des centres hospitaliers</a></li>";
         html += " <li><a href='/api/Hotels'>Liste des hotels</a></li>";
         html += " <li><a href='/api/Restaurants'>Liste des restaurants</a></li>";
+        html += " <li><a href='/api/refdata'>Ref data via Postgres</a></li>";
+        html += " <li><a href='/api/refdata/filter/*:*'>Ref data via Solr</a></li>";
         html += "</ul>";
         return html;
     }

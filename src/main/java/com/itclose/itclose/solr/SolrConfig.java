@@ -8,7 +8,7 @@ import org.apache.solr.client.solrj.request.QueryRequest;
 
 public class SolrConfig {
 
-    private final static String SOLR_URL = "http://sandbox-hdp.hortonworks.com:8886/solr/";
+    private final static String SOLR_URL = "http://185.181.11.120:8983/solr/";
     private final static String SOLR_FORMAT_OUTPUT = "json";
 
 

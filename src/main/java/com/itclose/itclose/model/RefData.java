@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.sql.Date;
+import java.util.Date;
 
 @Entity
 @Table(name = "REF_DATA")
@@ -73,6 +73,7 @@ public class RefData {
         return categorieReferentiel;
     }
 
+    @Field("categoriereferentiel")
     public void setCategorieReferentiel(String categorieReferentiel) {
         this.categorieReferentiel = categorieReferentiel;
     }
@@ -81,6 +82,7 @@ public class RefData {
         return nomStructure;
     }
 
+    @Field("nomstructure")
     public void setNomStructure(String nomStructure) {
         this.nomStructure = nomStructure;
     }
@@ -89,6 +91,7 @@ public class RefData {
         return nomPrenomResponsable;
     }
 
+    @Field("nomprenomresponsable")
     public void setNomPrenomResponsable(String nomPrenomResponsable) {
         this.nomPrenomResponsable = nomPrenomResponsable;
     }
@@ -97,6 +100,7 @@ public class RefData {
         return dateCreation;
     }
 
+    @Field("datecreation")
     public void setDateCreation(Date dateCreation) {
         this.dateCreation = dateCreation;
     }
@@ -105,6 +109,7 @@ public class RefData {
         return pays;
     }
 
+    @Field("pays")
     public void setPays(String pays) {
         this.pays = pays;
     }
@@ -113,6 +118,7 @@ public class RefData {
         return ville;
     }
 
+    @Field("ville")
     public void setVille(String ville) {
         this.ville = ville;
     }
@@ -121,6 +127,7 @@ public class RefData {
         return quartier;
     }
 
+    @Field("quartier")
     public void setQuartier(String quartier) {
         this.quartier = quartier;
     }
@@ -129,6 +136,7 @@ public class RefData {
         return adresse;
     }
 
+    @Field("adresse")
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
@@ -137,6 +145,7 @@ public class RefData {
         return rue;
     }
 
+    @Field("rue")
     public void setRue(String rue) {
         this.rue = rue;
     }
@@ -145,6 +154,7 @@ public class RefData {
         return telephone;
     }
 
+    @Field("telephone")
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
@@ -153,6 +163,7 @@ public class RefData {
         return email;
     }
 
+    @Field("email")
     public void setEmail(String email) {
         this.email = email;
     }
@@ -161,6 +172,7 @@ public class RefData {
         return siteWeb;
     }
 
+    @Field("siteweb")
     public void setSiteWeb(String siteWeb) {
         this.siteWeb = siteWeb;
     }
@@ -169,6 +181,7 @@ public class RefData {
         return boitePostale;
     }
 
+    @Field("boitepostale")
     public void setBoitePostale(String boitePostale) {
         this.boitePostale = boitePostale;
     }
@@ -177,6 +190,7 @@ public class RefData {
         return typeCentreHospitalier;
     }
 
+    @Field("typecentrehospitalier")
     public void setTypeCentreHospitalier(String typeCentreHospitalier) {
         this.typeCentreHospitalier = typeCentreHospitalier;
     }
@@ -185,6 +199,7 @@ public class RefData {
         return specialites;
     }
 
+    @Field("specialites")
     public void setSpecialites(String specialites) {
         this.specialites = specialites;
     }
@@ -193,6 +208,7 @@ public class RefData {
         return nbEtoile;
     }
 
+    @Field("nbetoile")
     public void setNbEtoile(int nbEtoile) {
         this.nbEtoile = nbEtoile;
     }
@@ -201,6 +217,7 @@ public class RefData {
         return typesPlats;
     }
 
+    @Field("typesplats")
     public void setTypesPlats(String typesPlats) {
         this.typesPlats = typesPlats;
     }
@@ -210,6 +227,7 @@ public class RefData {
         return secteurActivite;
     }
 
+    @Field("secteuractivite")
     public void setSecteurActivite(String secteurActivite) {
         this.secteurActivite = secteurActivite;
     }
@@ -218,6 +236,7 @@ public class RefData {
         return statutJuridique;
     }
 
+    @Field("statutjuridique")
     public void setStatutJuridique(String statutJuridique) {
         this.statutJuridique = statutJuridique;
     }
@@ -226,6 +245,7 @@ public class RefData {
         return regimeFiscal;
     }
 
+    @Field("regimefiscal")
     public void setRegimeFiscal(String regimeFiscal) {
         this.regimeFiscal = regimeFiscal;
     }
@@ -234,6 +254,7 @@ public class RefData {
         return assureur;
     }
 
+    @Field("assureur")
     public void setAssureur(String assureur) {
         this.assureur = assureur;
     }
@@ -242,6 +263,7 @@ public class RefData {
         return prime;
     }
 
+    @Field("prime")
     public void setPrime(float prime) {
         this.prime = prime;
     }
@@ -250,6 +272,7 @@ public class RefData {
         return valeurPrime;
     }
 
+    @Field("valeurprime")
     public void setValeurPrime(float valeurPrime) {
         this.valeurPrime = valeurPrime;
     }
@@ -258,6 +281,7 @@ public class RefData {
         return dureePrime;
     }
 
+    @Field("dureeprime")
     public void setDureePrime(int dureePrime) {
         this.dureePrime = dureePrime;
     }
@@ -266,6 +290,7 @@ public class RefData {
         return typeVehicule;
     }
 
+    @Field("typevehicule")
     public void setTypeVehicule(String typeVehicule) {
         this.typeVehicule = typeVehicule;
     }
@@ -274,6 +299,7 @@ public class RefData {
         return agentRavitoCarburant;
     }
 
+    @Field("agentravitocarburant")
     public void setAgentRavitoCarburant(String agentRavitoCarburant) {
         this.agentRavitoCarburant = agentRavitoCarburant;
     }
@@ -282,6 +308,7 @@ public class RefData {
         return typeAvion;
     }
 
+    @Field("typeavion")
     public void setTypeAvion(String typeAvion) {
         this.typeAvion = typeAvion;
     }
@@ -290,6 +317,7 @@ public class RefData {
         return nbPilotes;
     }
 
+    @Field("nbpilotes")
     public void setNbPilotes(int nbPilotes) {
         this.nbPilotes = nbPilotes;
     }
