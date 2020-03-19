@@ -96,7 +96,37 @@ public class SolrRefDataServices {
 
     public static List<RefData> getFullRefDataByFilter(String filter) throws IOException, SolrServerException {
 
-        SolrDocumentList documents = getRefDataDocumentFromSolrByFilter(filter);
+        String valueFilter = new String("categoriereferentiel:"+filter+
+        " OR nomstructure:"+filter+
+        " OR nomprenomresponsable:"+filter+
+        " OR datecreation:"+filter+
+        " OR pays:"+filter+
+        " OR ville:"+filter+
+        " OR quartier:"+filter+
+        " OR adresse:"+filter+
+        " OR rue:"+filter+
+        " OR telephone:"+filter+
+        " OR email:"+filter+
+        " OR siteweb:"+filter+
+        " OR boitepostale:"+filter+
+        " OR typecentrehospitalier:"+filter+
+        " OR specialites:"+filter+
+        " OR nbetoile:"+filter+
+        " OR typesplats:"+filter+
+        " OR secteuractivite:"+filter+
+        " OR statutjuridique:"+filter+
+        " OR regimefiscal:"+filter+
+        " OR assureur:"+filter+
+        " OR prime:"+filter+
+        " OR valeurprime:"+filter+
+        " OR dureeprime:"+filter+
+        " OR typevehicule:"+filter+
+        " OR agentravitocarburant:"+filter+
+        " OR typeavion:"+filter+
+        " OR nbpilotes:"+filter);
+
+        System.out.println(valueFilter);
+        SolrDocumentList documents = getRefDataDocumentFromSolrByFilter(valueFilter);
 
         List<RefData> myList = new ArrayList<RefData>();
 
@@ -111,7 +141,7 @@ public class SolrRefDataServices {
                 myData.setCategorieReferentiel(categorie) ;
                 myData.setNomStructure((String)aDoc.getFieldValue(NOM_STRUCTURE));
                 myData.setNomPrenomResponsable((String)aDoc.getFieldValue(NOM_RESPONSABLE));
-                myData.setDateCreation((Date)aDoc.getFieldValue(DATE_CREATION));
+                myData.setDateCreation((String)aDoc.getFieldValue(DATE_CREATION));
                 myData.setNomPrenomResponsable((String)aDoc.getFieldValue(NOM_RESPONSABLE));
                 myData.setPays((String)aDoc.getFieldValue(PAYS));
                 myData.setVille((String)aDoc.getFieldValue(VILLE));
@@ -128,11 +158,11 @@ public class SolrRefDataServices {
                     myData.setSpecialites((String) aDoc.getFieldValue(SPECIALITE_CH));
                 }
                 else  if(!categorie.isEmpty() && categorie.equals("Hotel")) {
-                    myData.setNbEtoile((int) aDoc.getFieldValue(NB_ETOILES));
+                    myData.setNbEtoile((String) aDoc.getFieldValue(NB_ETOILES));
                     myData.setTypesPlats((String) aDoc.getFieldValue(TYPE_PLATS));
                 }
                 else if(!categorie.isEmpty() && categorie.equals("Restaurant")) {
-                    myData.setNbEtoile((int) aDoc.getFieldValue(NB_ETOILES));
+                    myData.setNbEtoile((String) aDoc.getFieldValue(NB_ETOILES));
                 }
                 else if(!categorie.isEmpty() && categorie.equals("Entreprise")) {
                     myData.setSecteurActivite((String) aDoc.getFieldValue(SECTEUR_ACTIVITE));
@@ -141,8 +171,8 @@ public class SolrRefDataServices {
                 }
                 else if(!categorie.isEmpty() && categorie.equals("Assurance")) {
                     myData.setAssureur((String) aDoc.getFieldValue(ASSUREUR));
-                    myData.setPrime((float) aDoc.getFieldValue(PRIME));
-                    myData.setDureePrime((int) aDoc.getFieldValue(DUREE_PRIME));
+                    myData.setPrime((String) aDoc.getFieldValue(PRIME));
+                    myData.setDureePrime((String) aDoc.getFieldValue(DUREE_PRIME));
                 }
                 else  if(!categorie.isEmpty() && categorie.equals("Transporteur_Terrestre")) {
                     myData.setTypeVehicule((String) aDoc.getFieldValue(TYPE_VEHICULE));
@@ -150,7 +180,7 @@ public class SolrRefDataServices {
                 }
                 else  if(!categorie.isEmpty() && categorie.equals("Transporteur_Aerien")) {
                     myData.setTypeAvion((String) aDoc.getFieldValue(TYPE_AVION));
-                    myData.setNbPilotes((int) aDoc.getFieldValue(NB_PILOTES));
+                    myData.setNbPilotes((String) aDoc.getFieldValue(NB_PILOTES));
                 }
 
                 myList.add(myData);

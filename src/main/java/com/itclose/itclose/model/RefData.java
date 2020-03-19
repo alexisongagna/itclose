@@ -20,7 +20,7 @@ public class RefData {
     private String categorieReferentiel ;
     private String nomStructure ;
     private String nomPrenomResponsable ;
-    private Date dateCreation ;
+    private String dateCreation ;
     private String pays ;
     private String ville ;
     private String quartier ;
@@ -36,7 +36,7 @@ public class RefData {
     private String specialites ;
 
     //Common Fields for Restaurant and Hotel
-    private int nbEtoile ;
+    private String nbEtoile ;
     private String typesPlats ;
 
     //Fields for Entreprise
@@ -46,9 +46,9 @@ public class RefData {
 
     //Fields for Assurance
     private String assureur ;
-    private float prime ;
-    private float valeurPrime ;
-    private int dureePrime;
+    private String prime ;
+    private String valeurPrime ;
+    private String dureePrime;
 
     //Fields for TransporteurTerrestre
     private String typeVehicule ;
@@ -56,7 +56,7 @@ public class RefData {
 
     //Fields for TransporteurAerien
     private String typeAvion ;
-    private int nbPilotes ;
+    private String nbPilotes ;
 
     //default constructor
     public RefData(){}
@@ -96,12 +96,12 @@ public class RefData {
         this.nomPrenomResponsable = nomPrenomResponsable;
     }
 
-    public Date getDateCreation() {
+    public String getDateCreation() {
         return dateCreation;
     }
 
     @Field("datecreation")
-    public void setDateCreation(Date dateCreation) {
+    public void setDateCreation(String dateCreation) {
         this.dateCreation = dateCreation;
     }
 
@@ -204,12 +204,12 @@ public class RefData {
         this.specialites = specialites;
     }
 
-    public int getNbEtoile() {
+    public String getNbEtoile() {
         return nbEtoile;
     }
 
     @Field("nbetoile")
-    public void setNbEtoile(int nbEtoile) {
+    public void setNbEtoile(String nbEtoile) {
         this.nbEtoile = nbEtoile;
     }
 
@@ -259,30 +259,30 @@ public class RefData {
         this.assureur = assureur;
     }
 
-    public float getPrime() {
+    public String getPrime() {
         return prime;
     }
 
     @Field("prime")
-    public void setPrime(float prime) {
+    public void setPrime(String prime) {
         this.prime = prime;
     }
 
-    public float getValeurPrime() {
+    public String getValeurPrime() {
         return valeurPrime;
     }
 
     @Field("valeurprime")
-    public void setValeurPrime(float valeurPrime) {
+    public void setValeurPrime(String valeurPrime) {
         this.valeurPrime = valeurPrime;
     }
 
-    public int getDureePrime() {
+    public String getDureePrime() {
         return dureePrime;
     }
 
     @Field("dureeprime")
-    public void setDureePrime(int dureePrime) {
+    public void setDureePrime(String dureePrime) {
         this.dureePrime = dureePrime;
     }
 
@@ -313,12 +313,12 @@ public class RefData {
         this.typeAvion = typeAvion;
     }
 
-    public int getNbPilotes() {
+    public String getNbPilotes() {
         return nbPilotes;
     }
 
     @Field("nbpilotes")
-    public void setNbPilotes(int nbPilotes) {
+    public void setNbPilotes(String nbPilotes) {
         this.nbPilotes = nbPilotes;
     }
 

@@ -1,48 +1,43 @@
 package com.itclose.itclose.controller;
 
-import com.itclose.itclose.solr.SolrRefDataServices;
 import com.itclose.itclose.model.RefData;
 import com.itclose.itclose.repository.IRefDataRepository;
+import com.itclose.itclose.solr.SolrRefDataServices;
 import com.itclose.itclose.utils.ITCloseUtilPopulateTab;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.io.IOException;
 import java.util.List;
 
 @RestController
+@RequestMapping(value="/api")
 public class RefDataController {
 
     @Autowired
     private IRefDataRepository dao;
 
-    @RequestMapping(value = "/api/refdata", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/refdata/documents", method = RequestMethod.GET)
     public Iterable<RefData> getAllDataFromRelationalDB() throws IOException, SolrServerException {
         dao.deleteAll();
         this.testPopulate();
         return dao.findAll();
     }
 
-    @RequestMapping(value = "/api/refdata/filter/{filter}", method = RequestMethod.GET)
-    public List<RefData> getAllRefDataByFilter(@PathVariable String filter) {
-
-        List<RefData> myData = null ;
-        try {
-            myData = SolrRefDataServices.getFullRefDataByFilter(filter);
-        }
-        catch (IOException e) {
-            e.printStackTrace();   }
-        catch (SolrServerException e) {
-            e.printStackTrace();        }
-
-        return myData;
+    @RequestMapping(value = "/refdata/filter/{filter}", method = RequestMethod.GET)
+    public List<RefData> getAllRefDataByFilter(@PathVariable String filter) throws IOException, SolrServerException {
+       return SolrRefDataServices.getFullRefDataByFilter(filter);
     }
 
-    @PostMapping(value = "/api/refdata/save")
-    public RefData createrefData(@Valid @RequestBody RefData rd) {
-        return dao.save(rd);
+
+    @RequestMapping(value = "/refdata/save", method=RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public void createrefData(@RequestBody RefData rd) throws IOException, SolrServerException{
+        SolrRefDataServices.addRefData(rd);
     }
 
     public void testPopulate() throws IOException, SolrServerException {
